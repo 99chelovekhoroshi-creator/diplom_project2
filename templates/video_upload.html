@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Загрузка видеопотока</title>
+</head>
+<body>
+    <h1>Загрузка видеопотока</h1>
+    <form action="{% url 'process_video' %}" method="post" enctype="multipart/form-data">
+        {% csrf_token %}
+        <input type="file" name="video">
+        <input type="submit" value="Загрузить">
+    </form>
+
+    <h2>Сохраненные номера с временем:</h2>
+    <ul>
+    {% for car in cars %}
+        <li>{{ car.number }} - {{ car.time }}</li>
+    {% endfor %}
+    </ul>
+</body>
+</html>

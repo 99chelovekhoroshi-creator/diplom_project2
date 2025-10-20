@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>The Database of Cars</title>
+</head>
+<body>
+    <h1>The Database of Cars</h1>
+
+    <form method="POST" enctype="multipart/form-data" action="{% url 'process_video' %}">
+        {% csrf_token %}
+        <input type="file" name="video">
+        <button type="submit">Загрузка видеофайла</button>
+    </form>
+</body>
+</html>
